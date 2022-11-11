@@ -1,0 +1,35 @@
+{
+  "publisher": "GrapeSoftware",
+  "name": "gr-snippets",
+  "displayName": "Grape Snippets",
+  "description": "Grape Snippets for code companies standard",
+  "version": "0.0.2",
+  "engines": {
+    "vscode": "^1.73.0"
+  },
+  "categories": [
+    "Snippets"
+  ],
+  "icon": "images/grape-iso-128.png",
+  "contributes": {
+    "snippets": [
+      {
+        "language": "csharp",
+        "path": "./snippets/csharp.json"
+      },
+      {
+        "language": "html",
+        "path": "./snippets/html.json"
+      },
+      {
+        "language": "typescript",
+        "path": "./snippets/typescript.json"
+      }
+    ]
+  },
+  "license": "LICENSE",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/grape-software/snippets.git"
+  }
+}
