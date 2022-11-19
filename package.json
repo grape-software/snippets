@@ -3,7 +3,7 @@
   "name": "gr-snippets",
   "displayName": "Grape Snippets",
   "description": "Grape Snippets for code companies standard",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.73.0"
   },
@@ -24,6 +24,10 @@
       {
         "language": "typescript",
         "path": "./snippets/typescript.json"
+      },
+      {
+        "language": "rest",
+        "path": "./snippets/rest.json"
       }
     ]
   },
@@ -31,5 +35,17 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/grape-software/snippets.git"
-  }
+  },
+  "languages": [
+    {
+      "id": "rest",
+      "extensions": [
+        ".rest"
+      ],
+      "aliases": [
+        "Rest Client",
+        "rest client"
+      ]
+    }
+  ]
 }

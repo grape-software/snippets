@@ -1,4 +1,20 @@
 {
+	"C# Controller class": {
+		"scope": "csharp",
+		"prefix": "gr-controller",
+		"body": [
+			"using Microsoft.AspNetCore.Mvc;",
+			"using Microsoft.EntityFrameworkCore;",
+			"using System.Linq.Dynamic.Core;",
+			"",
+			"[Route(\"[controller]\")]",
+			"public class $1Controller : BaseApiController",
+			"{",
+			"public $1Controller(AppDBContext context, IConfiguration config) : base(context, config){",
+			"}}"
+		],
+		"description": "Controller Class Body"
+	},
 	"Search API": {
 		"prefix": "gr-search",
 		"body": [
@@ -76,7 +92,7 @@
 			"    try",
 			"    {",
 			"        record.UserId = JWTUser.UserID;",
-			"        record.Created = DateTime.UtcNow;",
+			"        record.Created = DateTime.Now;",
 			"        //Add record to database",
 			"        db.$1s.Add(record);",
 			"        await db.SaveChangesAsync();",
@@ -115,7 +131,7 @@
 			"            return BadRequest(\"$1 ID in url different than in $1 parameter\");",
 			"        try",
 			"        {",
-			"            if (await db.$1s.FindAsync(id) == null)",
+			"            if (await db.$1s.AnyAsync(x=>x.$1Id == id))",
 			"                return NotFound($\"$1 ID {id} not found.\");",
 			"",
 			"            record.Updated = DateTime.Now;",
@@ -151,13 +167,12 @@
 			"[Authorize(Roles = \"\")]",
 			"public async Task<IActionResult> Delete$1(int id)",
 			"{",
-			"    var record = await db.$1s.FindAsync(id);",
-			"",
-			"    if (record == null)",
-			"        return NotFound($\"$1 ID {id} not found.\");",
-			"",
 			"    try",
 			"    {",
+			"        var record = await db.$1s.FindAsync(id);",
+			"        if (record == null)",
+			"        return NotFound($\"$1 ID {id} not found.\");",
+			"",
 			"        db.$1s.Remove(record);",
 			"        await db.SaveChangesAsync();",
 			"    }",

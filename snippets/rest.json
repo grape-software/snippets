@@ -1,0 +1,21 @@
+{
+    "Rest login": {
+        "scope": "rest",
+        "prefix": "gr-rest-auth",
+        "body": [
+            "@host=https://localhost:$1",
+            "# @name login",
+            "POST {{host}}/auth/login",
+            "Content-Type: application/json",
+            "",
+            "{",
+            "   \"identifier\":\"admin\",",
+            "   \"password\":\"admin\",",
+            "}",
+            "",
+            "###",
+            "@token = Bearer {{login.response.body.jwtToken}}"
+        ],
+        "description": "Rest de login"
+    }
+}
