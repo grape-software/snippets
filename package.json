@@ -3,7 +3,7 @@
   "name": "gr-snippets",
   "displayName": "Grape Snippets",
   "description": "Grape Snippets for code companies standard",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.73.0"
   },

@@ -5,7 +5,9 @@
 		"body": [
 			"using Microsoft.AspNetCore.Mvc;",
 			"using Microsoft.EntityFrameworkCore;",
+			"using System;",
 			"using System.Linq.Dynamic.Core;",
+			"using System.Threading.Tasks;",
 			"",
 			"[Route(\"[controller]\")]",
 			"public class $1Controller : BaseApiController",
@@ -231,10 +233,28 @@
 	"Add only active filter to search API": {
 		"prefix": "gr-search-active",
 		"body": [
-			"                if (search.OnlyActive)",
-			"                    q1 = q1.Where(x => x.$1== null);",
+			"if (search.OnlyActive)",
+			"q1 = q1.Where(x => x.$1 == null);",
 			""
 		],
 		"description": "Add only active filter to search API"
+	},
+	"Add int field filter in search API": {
+		"prefix": "gr-search-param-int",
+		"body": [
+			"if (search.$1 > 0)",
+			"q1 = q1.Where(x => x.$1 == search.$1);",
+			""
+		],
+		"description": "Add int field filter in search API"
+	},
+	"Add not null field filter in search API": {
+		"prefix": "gr-search-param-string-not-null",
+		"body": [
+			"if (!string.IsNullOrWhiteSpace(search.$1))",
+			"q1 = q1.Where(x => x.$1 != null);",
+			""
+		],
+		"description": "Add int field filter in search API"
 	}
 }
