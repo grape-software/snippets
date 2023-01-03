@@ -341,7 +341,7 @@
       "      <div class=\"table-responsive\" *ngIf=\"items.length>0\">",
       "  ",
       "        <table class=\"table\">",
-      "          <thead>",
+      "          <thead class=\"align-middle\">",
       "            <tr>",
       "              <th></th>",
       "              <th>XXXX</th>",
