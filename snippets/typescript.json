@@ -216,5 +216,19 @@
 			"this.helpers.RaiseNotification('warning', '$1', '$2');"
 		],
 		"description": "Notification Warning"
+	},
+	"Suscribe Service": {
+		"prefix": "gr-suscribe-service",
+		"body": [
+			"this.$1s.$2s().subscribe({",
+			"  next: (r: any) => {",
+			"    // Result with API",
+			"  },",
+			"  error: (e: any) => {",
+			"    this.helpers.RaiseNotification('danger', 'Error', '$3s' + e.error);",
+			"  },",
+			"});"
+		],
+		"description": "Suscribe Service"
 	}
 }
