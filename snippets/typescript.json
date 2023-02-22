@@ -34,6 +34,7 @@
 			"        this.searchInfo.searching = false;",
 			"        this.searchInfo.onlyActive = true;",
 			"        this.searchInfo.totalCount = 0;",
+			"        this.searchData(true);",
 			"      }",
 			"    }",
 			"    /**",
