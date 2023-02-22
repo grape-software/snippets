@@ -459,8 +459,8 @@
       "        <p>Confirm delete?. This process cannot be reverse.</p>",
       "    </div>",
       "    <div class=\"modal-footer\">",
-      "        <button type=\"button\" class=\"btn btn-danger m-2\" (click)=\"delete()\">Delete</button>",
-      "        <button type=\"button\" class=\"btn btn-secondary m-2\" (click)=\"dialogDeleteRef.hide()\">Cancel</button>",
+      "        <button type=\"button\" class=\"btn btn-danger\" (click)=\"delete()\">Delete</button>",
+      "        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dialogDeleteRef.hide()\">Cancel</button>",
       "    </div>",
       "</ng-template>"
     ],
