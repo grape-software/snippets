@@ -29,6 +29,11 @@ No issues for now
 - Search and CRUD Grape standard UI
 - Typescript Grape standard methods
 
+## 0.0.8
+
+- Add Patch
+- Add Delete All
+
 ## Working with Markdown
 
 You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
