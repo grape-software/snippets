@@ -231,5 +231,35 @@
 			"});"
 		],
 		"description": "Suscribe Service"
+	},
+	"Crud Service": {
+		"prefix": "gr-crud-service",
+		"body": [
+			"export class $1sService {",
+			"  constructor(private http: HttpClient, private helpers: HelperService) {}",
+			"  search(par: any) {",
+			"    return this.http.get(environment.apiUrl + '/$1s/', {",
+			"      params: this.helpers.createHttpParams(par),",
+			"    });",
+			"  }",
+			"  get(id: number) {",
+			"    return this.http.get(environment.apiUrl + '/$1s/' + id);",
+			"  }",
+			"  delete(id: number) {",
+			"    return this.http.delete(environment.apiUrl + '/$1s/' + id);",
+			"  }",
+			"  add($1: any) {",
+			"    return this.http.post(environment.apiUrl + '/$1s', $1);",
+			"  }",
+			"  update($1: any) {",
+			"    return this.http.put(",
+			"      environment.apiUrl + `/$1s/${$1.$1Id}`,",
+			"      $1",
+			"    );",
+			"  }",
+			"}",
+			""
+		],
+		"description": "Crud Service"
 	}
 }

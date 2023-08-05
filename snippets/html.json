@@ -581,5 +581,19 @@
       "</accordion-bs>"
     ],
     "description": "Accordion"
+  },
+  "Search Text": {
+    "prefix": "gr-bs5-search-text",
+    "body": [
+      "      <div class=\"d-flex form-row flex-fill me-1\">",
+      "        <input",
+      "          type=\"search\"",
+      "          [(ngModel)]=\"searchInfo.searchText\"",
+      "          class=\"form-control\"",
+      "          placeholder=\"Ingrese el valor a buscar\"",
+      "          (keyup.enter)=\"searchData(true)\" />",
+      "      </div>"
+    ],
+    "description": "Search Text"
   }
 }

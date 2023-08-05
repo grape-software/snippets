@@ -2,13 +2,12 @@
 
 All notable changes to the "gr" extension will be documented in this file.
 
-Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how to structure this file.
-
-## [Unreleased]
-
-- Initial release
-
 ## 0.0.8
 
 - Add Patch
 - Add Delete All
+
+## 0.0.9
+
+- Add CRUD Service for Angular
+- Add BS5 Text Search in basic searchs
