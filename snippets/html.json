@@ -1,13 +1,4 @@
 {
-  "Working Panel": {
-    "prefix": "gr-search-0-working",
-    "body": [
-      "<div *ngIf=\"searchInfo?.searching\" id=\"overlay\">",
-      "    <div class=\"loader\">Working...</div>",
-      "</div>"
-    ],
-    "description": "Show working panel"
-  },
   "Search Panel": {
     "prefix": "gr-search-1-basic-panel",
     "body": [
@@ -107,7 +98,7 @@
       "    <div class=\"clearfix\" *ngIf=\"items.length==0 && searched\">",
       "      <p class=\"p-3 my-3 bg-warning text-dark\">",
       "        <fa-icon icon=\"inbox\"></fa-icon>",
-      "        No results",
+      "        No se encontraron resultados.",
       "      </p>",
       "    </div>",
       "  </div>",
@@ -185,17 +176,17 @@
       "<!-- Record Detail -->",
       "<ng-template #dialogDetail>",
       "    <div class=\"modal-header\">",
-      "        <h4 class=\"modal-title pull-left\">Detail</h4>",
-      "        <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"dialogDetailRef.hide()\">",
+      "        <h4 class=\"modal-title pull-left\">Detalle</h4>",
+      "        <button type=\"button\" class=\"close pull-right\" aria-label=\"Cerrar\" (click)=\"dialogDetailRef.hide()\">",
       "            <span aria-hidden=\"true\">&times;</span>",
       "        </button>",
       "    </div>",
       "    <div class=\"modal-body\">",
-      "        <!-- Add elements to details -->",
+      "        <!-- Agregar elementos al detalle -->",
       "    </div>",
       "    <div class=\"modal-footer\">",
-      "        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dialogDetailRef.hide()\" label=\"Yes\">",
-      "            Close",
+      "        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dialogDetailRef.hide()\" label=\"Cerrar\">",
+      "            Cerrar",
       "        </button>",
       "    </div>",
       "</ng-template>"
