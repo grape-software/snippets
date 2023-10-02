@@ -1,13 +1,4 @@
 {
-  "Working Panel": {
-    "prefix": "gr-search-0-working",
-    "body": [
-      "<div *ngIf=\"searchInfo?.searching\" id=\"overlay\">",
-      "    <div class=\"loader\">Working...</div>",
-      "</div>"
-    ],
-    "description": "Show working panel"
-  },
   "Search Panel": {
     "prefix": "gr-search-1-basic-panel",
     "body": [
@@ -107,7 +98,7 @@
       "    <div class=\"clearfix\" *ngIf=\"items.length==0 && searched\">",
       "      <p class=\"p-3 my-3 bg-warning text-dark\">",
       "        <fa-icon icon=\"inbox\"></fa-icon>",
-      "        No results",
+      "        No se encontraron resultados.",
       "      </p>",
       "    </div>",
       "  </div>",
