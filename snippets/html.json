@@ -282,17 +282,8 @@
     ],
     "description": "View Table"
   },
-  "Working Panel BS5": {
-    "prefix": "gr-bs5-search-0-working",
-    "body": [
-      "<div *ngIf=\"searchInfo?.searching\" id=\"overlay\">",
-      "    <div class=\"loader\">Working...</div>",
-      "</div>"
-    ],
-    "description": "Show working panel"
-  },
-  "Search Panel BS5": {
-    "prefix": "gr-bs5-search-1-basic-panel",
+  "Search Panel BS5 English": {
+    "prefix": "gr-bs5-search-1-basic-panel-en",
     "body": [
       "<div class=\"card\">",
       "    <div class=\"card-header\">",
@@ -324,8 +315,8 @@
     ],
     "description": "Search Panel"
   },
-  "Search Results BS5": {
-    "prefix": "gr-bs5-search-2-results",
+  "Search Results BS5 English": {
+    "prefix": "gr-bs5-search-2-results-en",
     "body": [
       "<div class=\"card\">",
       "    <div class=\"card-body\">",
@@ -349,7 +340,7 @@
       "                  </button>",
       "                  <ul class=\"dropdown-menu\">",
       "                    <li role=\"menuitem\" *ngFor=\"let o of orderItems\">",
-      "                      <a class=\"dropdown-item\" (click)=\"onSort(o.data)\">{{ o.title }}</a>",
+      "                      <button class=\"dropdown-item\" (click)=\"onSort(o.data)\">{{ o.title }}</button>",
       "                    </li>",
       "                  </ul>",
       "                </div>",
@@ -358,7 +349,7 @@
       "          </thead>",
       "          <tbody>",
       "            <tr",
-      "              *ngFor=\"let data of items  | paginate: {id:'$1'itemsPerPage: searchInfo.pageSize, currentPage: searchInfo.pageIndex, totalItems: searchInfo.totalCount}\">",
+      "              *ngFor=\"let data of items  | paginate: {id:'$1', itemsPerPage: searchInfo.pageSize, currentPage: searchInfo.pageIndex, totalItems: searchInfo.totalCount}\">",
       "              ",
       "              <td>{{data.algo}}</td>",
       "              <td>",
@@ -368,6 +359,9 @@
       "              <td>{{data.fecha | date: \"dd/MM/yyyy\" }}</td>",
       "              <td>",
       "                <div class=\"float-end d-flex\">",
+      "                  <button class=\"btn btn-light\" type=\"button\" (click)=\"edit(data, dialogEdit)\" tooltip=\"Editar\">",
+      "                    <fa-icon icon=\"pen\"></fa-icon>",
+      "                  </button>",
       "                  <button class=\"btn btn-light\" type=\"button\" (click)=\"detail(data)\" tooltip=\"Detail\">",
       "                    <fa-icon icon=\"info\"></fa-icon>",
       "                  </button>",
@@ -411,8 +405,8 @@
     ],
     "description": "Search State Bar"
   },
-  "Advanced Dialog BS5": {
-    "prefix": "gr-bs5-dialog-advanced",
+  "Advanced Dialog BS5 English": {
+    "prefix": "gr-bs5-dialog-advanced-en",
     "body": [
       "<ng-template #dialogAdvanced>",
       "    <div class=\"modal-header\">",
@@ -423,6 +417,7 @@
       "    </div>",
       "    <div class=\"modal-body\">",
       "        <!-- Add filters elements -->",
+      "        <div class=\"alert alert-info\" role=\"alert\">Advanced filters are not defined.</div>",
       "    </div>",
       "    <div class=\"modal-footer\">",
       "        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dialogAdvancedRef.hide()\" label=\"No\">",
@@ -436,8 +431,8 @@
     ],
     "description": "Advanced Dialog"
   },
-  "Delete Dialog BS5": {
-    "prefix": "gr-bs-5-dialog-delete",
+  "Delete Dialog BS5 English": {
+    "prefix": "gr-bs-5-dialog-delete-en",
     "body": [
       "<ng-template #dialogDelete>",
       "    <div class=\"modal-header\">",
@@ -457,8 +452,8 @@
     ],
     "description": "Delete Dialog"
   },
-  "Detail Dialog BS5": {
-    "prefix": "gr-bs5-dialog-detail",
+  "Detail Dialog BS5 English": {
+    "prefix": "gr-bs5-dialog-detail-en",
     "body": [
       "<ng-template #dialogDetail>",
       "    <div class=\"modal-header\">",
@@ -479,20 +474,26 @@
     ],
     "description": "Detail Dialog"
   },
-  "Autocomplete BS5": {
-    "prefix": "gr-bs5-autocomplete",
+  "Add Edit Dialog BS5 English": {
+    "prefix": "gr-bs5-dialog-edit-en",
     "body": [
-      "<div class=\"d-flex form-row flex-fill me-2\">",
-      "    <input type=\"search\" [(ngModel)]=\"$1Name\" typeaheadOptionField=\"$1FullName\"",
-      "        [typeahead]=\"$1$\" [typeaheadAsync]=\"true\" (typeaheadOnSelect)=\"onSelect($event)\"",
-      "        [typeaheadWaitMs]=\"500\" (keyup)=\"on$1KeyUp()\" class=\"form-control\"",
-      "        placeholder=\"$1 to search\">",
-      "</div>"
+      "<ng-template #dialogEdit>",
+      "  <div class=\"modal-header\">",
+      "    <h4 class=\"modal-title pull-left\">{{ selected.$1Id > 0 ? 'Edit' : 'Add' }}</h4>",
+      "    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"dialogEditRef.hide()\">",
+      "      <span aria-hidden=\"true\"></span>",
+      "    </button>",
+      "  </div>",
+      "  <div class=\"modal-body\">",
+      "    <!-- Add/Edit Component -->",
+      "  </div>",
+      "</ng-template>",
+      ""
     ],
-    "description": "Autocomplete"
+    "description": "Add Edit Dialog BS5 Spanish"
   },
-  "From To in search BS5": {
-    "prefix": "gr-bs5-from-to",
+  "From To in search BS5 English": {
+    "prefix": "gr-bs5-from-to-en",
     "body": [
       "<div class=\"d-flex form-row\">",
       "         <label class=\"p-2\">From</label>",
@@ -509,8 +510,8 @@
     ],
     "description": "From To in search"
   },
-  "Tabs BS5": {
-    "prefix": "gr-bs5-tabset",
+  "Tabs BS5 English": {
+    "prefix": "gr-bs5-tabset-en",
     "body": [
       "<tabset>",
       "        <tab heading=\"General\">\",",
@@ -522,6 +523,18 @@
       "</tabset>"
     ],
     "description": "Tabs"
+  },
+  "Autocomplete BS5": {
+    "prefix": "gr-bs5-autocomplete",
+    "body": [
+      "<div class=\"d-flex form-row flex-fill me-2\">",
+      "    <input type=\"search\" [(ngModel)]=\"$1Name\" typeaheadOptionField=\"$1FullName\"",
+      "        [typeahead]=\"$1$\" [typeaheadAsync]=\"true\" (typeaheadOnSelect)=\"onSelect($event)\"",
+      "        [typeaheadWaitMs]=\"500\" (keyup)=\"on$1KeyUp()\" class=\"form-control\"",
+      "        placeholder=\"$1 to search\">",
+      "</div>"
+    ],
+    "description": "Autocomplete"
   },
   "View Form BS5": {
     "prefix": "gr-bs5-view-detail",
@@ -586,5 +599,279 @@
       "      </div>"
     ],
     "description": "Search Text"
+  },
+  "Search Panel BS5 Spanish": {
+    "prefix": "gr-bs5-search-1-basic-panel-es",
+    "body": [
+      "<div class=\"card\">",
+      "    <div class=\"card-header\">",
+      "      <!-- <h3></h3> -->",
+      "    </div>",
+      "    <div class=\"card-body\">",
+      "      <div class=\"d-flex justify-content-between\">",
+      "        <!-- Autocomplete or search elements -->",
+      "        ",
+      "        <!-- Buttons -->",
+      "        <div class=\"d-flex float-end\">",
+      "          <button type=\"button\" (click)=\"searchData(true)\" [disabled]=\"searchInfo.searching\" value=\"Search\"",
+      "            tooltip=\"Buscar\" class=\"btn btn-light\">",
+      "            <span class=\"spinner-border spinner-border-sm\" role=\"status\" aria-hidden=\"true\"",
+      "              *ngIf=\"searchInfo.searching\"></span>",
+      "            <fa-icon icon=\"search\"></fa-icon>",
+      "          </button>",
+      "          <button class=\"btn btn-light\" type=\"button\"  (click)=\"showAdvanced(dialogAdvanced)\" tooltip=\"Filtros Avanzados\">",
+      "            <fa-icon icon=\"filter\"></fa-icon>",
+      "            <span *ngIf=\"searchInfo.totalCount>0\" class=\"badge bg-info\">{{searchInfo.totalCount}}</span>",
+      "          </button>",
+      "          <button class=\"btn btn-light\" type=\"button\" (click)=\"add()\" tooltip=\"Agregar\">",
+      "            <fa-icon icon=\"plus\"></fa-icon>",
+      "          </button>",
+      "        </div>",
+      "      </div>",
+      "    </div>",
+      "  </div>"
+    ],
+    "description": "Search Panel"
+  },
+  "Search Results BS5 Spanish": {
+    "prefix": "gr-bs5-search-2-results-es",
+    "body": [
+      "<div class=\"card\">",
+      "    <div class=\"card-body\">",
+      "      <div class=\"table-responsive\" *ngIf=\"items.length>0\">",
+      "  ",
+      "        <table class=\"table\">",
+      "          <thead class=\"align-middle\">",
+      "            <tr>",
+      "              <th></th>",
+      "              <th>XXXX</th>",
+      "              <th>XXXX</th>",
+      "              <th class=\"text-end\">",
+      "                <div class=\"dropdown\" *ngIf=\"orderItems.length > 0\">",
+      "                  <button",
+      "                    class=\"btn btn-light dropdown-toggle\"",
+      "                    type=\"button\"",
+      "                    data-bs-toggle=\"dropdown\"",
+      "                    aria-expanded=\"false\">",
+      "                    <fa-icon *ngIf=\"searchInfo?.sortValue === 'asc'\" icon=\"sort-amount-down-alt\"> </fa-icon>",
+      "                    <fa-icon *ngIf=\"searchInfo?.sortValue !== 'asc'\" icon=\"sort-amount-down\"></fa-icon>",
+      "                  </button>",
+      "                  <ul class=\"dropdown-menu\">",
+      "                    <li role=\"menuitem\" *ngFor=\"let o of orderItems\">",
+      "                      <button class=\"dropdown-item\" (click)=\"onSort(o.data)\">{{ o.title }}</button>",
+      "                    </li>",
+      "                  </ul>",
+      "                </div>",
+      "              </th>",
+      "            </tr>",
+      "          </thead>",
+      "          <tbody>",
+      "            <tr",
+      "              *ngFor=\"let data of items  | paginate: {id:'$1', itemsPerPage: searchInfo.pageSize, currentPage: searchInfo.pageIndex, totalItems: searchInfo.totalCount}\">",
+      "              ",
+      "              <td>{{data.algo}}</td>",
+      "              <td>",
+      "                  <div *ngIf=\"data.XXXX>0\">{{data.XXXX}}</div> <!-- if you need to show more than a field by column -->",
+      "                  {{data.value | currency: 'ARS':'symbol'}}",
+      "              </td>",
+      "              <td>{{data.fecha | date: \"dd/MM/yyyy\" }}</td>",
+      "              <td>",
+      "                <div class=\"float-end d-flex\">",
+      "                  <button class=\"btn btn-light\" type=\"button\" (click)=\"edit(data, dialogEdit)\" tooltip=\"Editar\">",
+      "                    <fa-icon icon=\"pen\"></fa-icon>",
+      "                  </button>",
+    "                  <button class=\"btn btn-light\" type=\"button\" (click)=\"detail(data)\" tooltip=\"Detalle\">",
+      "                    <fa-icon icon=\"info\"></fa-icon>",
+      "                  </button>",
+      "                  <button class=\"btn btn-light\" type=\"button\" (click)=\"showDelete(data,dialogDelete)\" tooltip=\"Eliminar\">",
+      "                    <fa-icon icon=\"trash-alt\" [classes]=\"['text-danger']\"></fa-icon>",
+      "                  </button>",
+      "                </div>",
+      "              </td>",
+      "            </tr>",
+      "          </tbody>",
+      "        </table>",
+      "      </div>",
+      "      <div class=\"row\" *ngIf=\"items.length>0\">",
+      "        <div class=\"text-center\">",
+      "          <pagination-controls id=\"$1\" [autoHide]=\"true\" previousLabel=\"\" nextLabel=\"\" [responsive]=\"true\"",
+      "            (pageChange)=\"pageChanged($event)\">",
+      "          </pagination-controls>",
+      "        </div>",
+      "      </div>",
+      "      <div class=\"clearfix\" *ngIf=\"items.length===0 && searched\">",
+      "        <p class=\"p-3 my-3 bg-warning text-dark\">",
+      "          <fa-icon icon=\"inbox\"></fa-icon>",
+      "          Sin resultados",
+      "        </p>",
+      "      </div>"
+    ],
+    "description": "Search Results"
+  },
+  "Advanced Dialog BS5 Spanish": {
+    "prefix": "gr-bs5-dialog-advanced-es",
+    "body": [
+      "<ng-template #dialogAdvanced>",
+      "    <div class=\"modal-header\">",
+      "        <h4 class=\"modal-title pull-left\">Filtros Avanzados</h4>",
+      "        <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"dialogAdvancedRef.hide()\">",
+      "            <span aria-hidden=\"true\"></span>",
+      "        </button>",
+      "    </div>",
+      "    <div class=\"modal-body\">",
+      "        <!-- Add filters elements -->",
+      "        <div class=\"alert alert-info\" role=\"alert\">No hay definido filtros avanzados para este módulo.</div>",
+      "    </div>",
+      "    <div class=\"modal-footer\">",
+      "        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dialogAdvancedRef.hide()\" label=\"No\">",
+      "            Cerrar",
+      "        </button>",
+      "        <button type=\"button\" class=\"btn btn-primary\" (click)=\"applyAdvanced()\" label=\"Yes\">",
+      "            Aplicar",
+      "        </button>",
+      "    </div>",
+      "</ng-template>"
+    ],
+    "description": "Advanced Dialog"
+  },
+  "Delete Dialog BS5 Spanish": {
+    "prefix": "gr-bs-5-dialog-delete-es",
+    "body": [
+      "<ng-template #dialogDelete>",
+      "    <div class=\"modal-header\">",
+      "        <h4 class=\"modal-title pull-left\">Confirmar Eliminar</h4>",
+      "        <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"dialogDeleteRef.hide()\">",
+      "            <span aria-hidden=\"true\"></span>",
+      "        </button>",
+      "    </div>",
+      "    <div class=\"modal-body\">",
+      "        <p>¿Confirma la eliminación?. Este proceso no se puede revertir.</p>",
+      "    </div>",
+      "    <div class=\"modal-footer\">",
+      "        <button type=\"button\" class=\"btn btn-danger\" (click)=\"delete()\">Eliminar</button>",
+      "        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dialogDeleteRef.hide()\">Cancelar</button>",
+      "    </div>",
+      "</ng-template>"
+    ],
+    "description": "Delete Dialog"
+  },
+  "Detail Dialog BS5 Spanish": {
+    "prefix": "gr-bs5-dialog-detail-es",
+    "body": [
+      "<ng-template #dialogDetail>",
+      "    <div class=\"modal-header\">",
+      "        <h4 class=\"modal-title pull-left\">Detalle</h4>",
+      "        <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"dialogDetailRef.hide()\">",
+      "            <span aria-hidden=\"true\"></span>",
+      "        </button>",
+      "    </div>",
+      "    <div class=\"modal-body\">",
+      "        <!-- Add elements to details -->",
+      "    </div>",
+      "    <div class=\"modal-footer\">",
+      "        <button type=\"button\" class=\"btn btn-secondary\" (click)=\"dialogDetailRef.hide()\" label=\"Yes\">",
+      "            Cerrar",
+      "        </button>",
+      "    </div>",
+      "</ng-template>"
+    ],
+    "description": "Detail Dialog"
+  },
+  "Add Edit Dialog BS5 Spanish": {
+    "prefix": "gr-bs5-dialog-edit-es",
+    "body": [
+      "<ng-template #dialogEdit>",
+      "  <div class=\"modal-header\">",
+      "    <h4 class=\"modal-title pull-left\">{{ selected.$1Id > 0 ? 'Editar' : 'Agregar' }}</h4>",
+      "    <button type=\"button\" class=\"btn-close\" aria-label=\"Close\" (click)=\"dialogEditRef.hide()\">",
+      "      <span aria-hidden=\"true\"></span>",
+      "    </button>",
+      "  </div>",
+      "  <div class=\"modal-body\">",
+      "    <!-- Add/Edit Component -->",
+      "  </div>",
+      "</ng-template>",
+      ""
+    ],
+    "description": "Add Edit Dialog BS5 Spanish"
+  },  
+  "From To in search BS5 Spanish": {
+    "prefix": "gr-bs5-from-to-es",
+    "body": [
+      "<div class=\"d-flex form-row\">",
+      "         <label class=\"p-2\">Desde</label>",
+      "          <div class=\"col-sm-8\">",
+      "              <input class=\"form-control\" [(ngModel)]=\"searchInfo.fromDate\" type=\"date\">",
+      "          </div>",
+      "      </div>",
+      "      <div class=\"d-flex form-row\">",
+      "          <label class=\"p-2\">Hasta</label>",
+      "          <div class=\"col-sm-8\">",
+      "              <input class=\"form-control\" [(ngModel)]=\"searchInfo.toDate\" type=\"date\">",
+      "          </div>",
+      "      </div> "
+    ],
+    "description": "From To in search"
+  },  
+  "Tabs BS5 Spanish": {
+    "prefix": "gr-bs5-tabset-es",
+    "body": [
+      "<tabset>",
+      "        <tab heading=\"General\">\",",
+      "    ",
+      "        </tab>",
+      "        <tab heading=\"Detalles\" (selectTab)=\"loadDetails()\">",
+      "    ",
+      "        </tab>",
+      "</tabset>"
+    ],
+    "description": "Tabs"
+  },
+  "Form Add Edit BS5 Spanish": {
+    "prefix": "gr-bs5-form-edit-es",
+    "body": [
+      "<div class=\"card\">",
+      "  <div class=\"card-header\">",
+      "    <h3>{{ $1.$1Id ? 'Editar' : 'Nueva' }} $1</h3>",
+      "  </div>",
+      "  <div class=\"card-body\">",
+      "    <div class=\"row p-2\">",
+      "      <div class=\"col-sm-6 p-2\">",
+      "        <label class=\"control-label\">Código</label>",
+      "        <input",
+      "          type=\"text\"",
+      "          placeholder=\"Ingrese el código\"",
+      "          class=\"{{ !$1.codigo ? 'form-control is-invalid' : 'form-control' }}\"",
+      "          required",
+      "          [(ngModel)]=\"$1.codigo\"",
+      "          #Codigo=\"ngModel\"",
+      "          autofocus",
+      "          maxlength=\"20\" />",
+      "        <div class=\"text-danger\" *ngIf=\"!$1.codigo\">El campo es requerido</div>",
+      "      </div>",
+      "      <div class=\"col-sm-6 p-2\">",
+      "        <label class=\"control-label\">SELECT</label>",
+      "        <div class=\"col-sm-12\">",
+      "          <select class=\"form-select\" placeholder=\"Seleccione FIELD\" [(ngModel)]=\"$1.FIELD\">",
+      "            <option value=\"S\">Activa</option>",
+      "          </select>",
+      "        </div>",
+      "      </div>",
+      "      <div class=\"col-sm-6 mt-2\">",
+      "        <div class=\"form-check\">",
+      "          <label class=\"form-check-label\" for=\"check1\">LABEL</label>",
+      "          <input type=\"checkbox\" class=\"form-check-input\" [(ngModel)]=\"$1.CHECK\" id=\"check1\" />",
+      "        </div>",
+      "      </div>",
+      "    </div>",
+      "    <div class=\"float-end\">",
+      "      <button type=\"button\" class=\"btn btn-secondary me-2\" (click)=\"onCancel()\">Cancelar</button>",
+      "      <button type=\"button\" class=\"btn btn-primary\" tooltip=\"Agregar $1\" (click)=\"save()\">Aceptar</button>",
+      "    </div>",
+      "  </div>",
+      "</div>",
+      ""
+    ],
+    "description": "Form Add Edit BS5 Spanish"
   }
 }
