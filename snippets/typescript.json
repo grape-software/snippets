@@ -131,10 +131,9 @@
 		  "    this.dialogDeleteRef.hide();",
 		  "    this.helpers.RaiseNotification('warning', 'Error', 'Not implemented');",
 		  "  }",
-		  "  detail(data: any): void {",
+		  "  showDetail(data: any, template: TemplateRef<any>): void {",
 		  "    this.selected = data;",
-		  "    this.dialogDetailRef.hide();",
-		  "    this.helpers.RaiseNotification('warning', 'Error', 'Not implemented');",
+		  "    this.dialogDetailRef = this.modalService.show(template, { class: 'modal-lg' });",
 		  "  }"
 		],
 		"description": "Search Template Angular Component"

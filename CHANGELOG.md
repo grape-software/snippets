@@ -2,6 +2,11 @@
 
 All notable changes to the "gr" extension will be documented in this file.
 
+## 0.0.13
+- html in spanish and english
+- typescript search ts working
+- html form add and edit
+
 ## 0.0.8
 
 - Add Patch
